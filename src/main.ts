@@ -1,3 +1,5 @@
+import { foobar } from "./foobar.js";
+
 /**
  * Some predefined delay values (in milliseconds).
  */
@@ -19,7 +21,7 @@ function delayedHello(
   delay: number = Delays.Medium,
 ): Promise<string> {
   return new Promise((resolve: (value?: string) => void) =>
-    setTimeout(() => resolve(`Hello, ${name}`), delay),
+    setTimeout(() => resolve(`Hello, ${name} - ${foobar('foo')}`), delay),
   );
 }
 
