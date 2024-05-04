@@ -32,5 +32,11 @@ function delayedHello(
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function greeter(name: any) { // eslint-disable-line @typescript-eslint/no-explicit-any
   // The name parameter should be of type string. Any is used only to trigger the rule.
-  return await delayedHello(name, Delays.Long);
+  return await delayedHello(name, Delays.Short);
+}
+
+export function main(): void {
+  greeter('John').then((greeting) => {
+    console.log(greeting);
+  });
 }
